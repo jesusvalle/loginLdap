@@ -25,6 +25,8 @@ $user = $_SESSION["usuario"];
 $pass = $_SESSION["contra"];
 $passVieja = $_POST["pass"];
 $passNueva = $_POST["passNueva"];
+$humano = $_POST["humano"];
+$robot = $_POST["robot"];
 
 
 //CONEXION
@@ -33,31 +35,40 @@ $ldap_dn = "cn=$user,dc=daw2,dc=net";
 $ldap_password = $pass;
 ldap_set_option($ldap_con, LDAP_OPT_PROTOCOL_VERSION, 3);
 
-if(isset($user) and isset($passNueva) and isset($pass)) {
-	
-	//SI LA CONTRASEÑA ANTIGUA SE HA INTRODUCIDO CORRECTAMENTE:
-	if($pass == $passVieja){
-		$ldapbind = ldap_bind($ldap_con, $ldap_dn, $ldap_password);
+
+if(isset($humano) && !isset($robot)){
+	if(isset($user) and isset($passNueva) and isset($pass)) {
 		
-		if($ldapbind) {
-	
-			if(ldap_mod_replace ($ldap_con, $ldap_dn,
-					array('userpassword' => "{MD5}".base64_encode(pack("H*",md5($passNueva)))))) {
-						echo "<p>Cambio de contraseña correcto</p>";
-						echo "<p><a href='logout.php'>Volver a loguearse</a></p>";
-					}else{
-						echo "<p>Cambio de contraseña erróneo</p>";
-						echo "<p><a href='cambiar_pass.php'>Volver</a></p>";
-					}
+		//SI LA CONTRASEÑA ANTIGUA SE HA INTRODUCIDO CORRECTAMENTE:
+		if($pass == $passVieja){
+			$ldapbind = ldap_bind($ldap_con, $ldap_dn, $ldap_password);
+			
+			if($ldapbind) {
+				
+				if(ldap_mod_replace ($ldap_con, $ldap_dn,
+						array('userpassword' => "{MD5}".base64_encode(pack("H*",md5($passNueva)))))) {
+							echo "<p>Cambio de contraseña correcto</p>";
+							echo "<p><a href='logout.php'>Volver a loguearse</a></p>";
+						}else{
+							echo "<p>Cambio de contraseña erróneo</p>";
+							echo "<p><a href='cambiar_pass.php'>Volver</a></p>";
+						}
+			}else{
+				echo "ERROR, no se ha podido tramitar el cambio de contraseña debido a un fallo de los parámetros de la aplicación..";
+				echo "<p><a href='cambiar_pass.php'>Volver</a></p>";
+			}
 		}else{
-			echo "ERROR, no se ha podido tramitar el cambio de contraseña debido a un fallo de los parámetros de la aplicación..";
+			echo "<p>Error. Contraseña actual incorrecta.";
 			echo "<p><a href='cambiar_pass.php'>Volver</a></p>";
 		}
-	}else{
-		echo "<p>Error. Contraseña actual incorrecta.";
-		echo "<p><a href='cambiar_pass.php'>Volver</a></p>";
+		
 	}
-	
+}else if(isset($robot)){
+	echo "<p>Error. Si eres un robot, no se te permite el acceso.";
+	echo "<p><a href='cambiar_pass.php'>Volver</a></p>";
+}else if(!isset($humano)){
+	echo "<p>Error. Debes marcar que eres un humano para continuar.";
+	echo "<p><a href='cambiar_pass.php'>Volver</a></p>";
 }
 
 ?>
