@@ -70,7 +70,7 @@ if(isset($humano) && !isset($robot)){
 	echo "<p><a href='cambiar_pass.php'>Volver</a></p>";
 }else if(!isset($humano)){
 	echo "<p>Error. Debes marcar que eres un humano para continuar.";
-	echo "<p><a href='cambiar_pass.php'>Volver</a></p>";
+	echo "asd<p><a href='cambiar_pass.php'>Volver</a></p>";
 }
 
 ?>
