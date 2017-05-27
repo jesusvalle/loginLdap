@@ -32,9 +32,6 @@
 							<p>Contraseña</p>
 							<input type="password" name="pass" id="pass" placeholder="" tabindex=7>
 							
-							<input type="checkbox" name="humano" value="humano">Soy humano
-							<input type="checkbox" name="robot" value="Car">Soy un robot 
-							
 							<input type="submit" value="Entrar"/>
 							
 						</div>

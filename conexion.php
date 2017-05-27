@@ -3,11 +3,6 @@
 //Capturamos el usuario y la contraseña provinente del formulario
 $user = $_POST['nombre'];
 $pass = $_POST['pass'];
-$humano = $_POST['humano'];
-$robot = $_POST['robot'];
-
-var_dump($humano);
-var_dump($robot);
 
 //Parametros LDAP
 $ldap_dn = "cn=$user,dc=daw2,dc=net";
