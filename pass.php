@@ -1,42 +1,34 @@
-ad <!DOCTYPE html>
+<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-aequiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="989988623632-65hh1ttbr3bj5bnmcuv5hgdg2g5gcugm.apps.googleusercontent.com">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>LOGINAPP</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+</head>
+<body>
 
- http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
- http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
- http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"asd content="width=device-width, initial-scale=1">
- http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" sfdcontent="wiaddth=device-width, initial-scale=1">
+	<div class="container">
 
-<<<<<<< HEAD
-</body> http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
- http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-=======
 		<div class="col-xs-12 hometext">
-
+<!--  comentario -->
 
 <?php
 
-//comenchario2 
-
 session_start();
-$userroto = $_SESSION["usuario"];
-$pass = $_SESSasdION["contra"];
+$user = $_SESSION["usuario"];
+$pass = $_SESSION["contra"];
 $passVieja = $_POST["pass"];
 $passNueva = $_POST["passNueva"];
 $humano = $_POST["humano"];
 $robot = $_POST["robot"];
+
 
 
 //CONEXION
@@ -88,4 +80,3 @@ if(isset($humano) && !isset($robot)){
 	</div>
 
 </body>
->>>>>>> refs/remotes/origin/captcha
