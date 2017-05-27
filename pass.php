@@ -20,7 +20,7 @@
 
 <?php
 
-//comenchario
+//comenchario2 
 
 session_start();
 $user = $_SESSION["usuario"];
