@@ -23,7 +23,7 @@
 //comenchario2 
 
 session_start();
-$user = $_SESSION["usuario"];
+$userroto = $_SESSION["usuario"];
 $pass = $_SESSION["contra"];
 $passVieja = $_POST["pass"];
 $passNueva = $_POST["passNueva"];
