@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 ?>
 
@@ -31,6 +31,8 @@
 						<input type="password" name="pass" id="pass" placeholder="" tabindex=1>
 						<p>Nueva Contraseña</p>
 						<input type="password" name="passNueva" id="passNueva" placeholder="" tabindex=1>
+						<input type="checkbox" name="humano" id="humano"><p class="check">Soy humano</p>
+						<input type="checkbox" name="robot" id="robot"><p class="check">Soy un robot</p>
 						<input type="submit" value="Entrar"/>
 						
 					</div>

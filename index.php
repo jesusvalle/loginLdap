@@ -31,6 +31,7 @@
 							<input type="text" name="nombre" id="nombre" placeholder="" tabindex=1>
 							<p>Contraseña</p>
 							<input type="password" name="pass" id="pass" placeholder="" tabindex=7>
+							
 							<input type="submit" value="Entrar"/>
 							
 						</div>
