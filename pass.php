@@ -24,7 +24,7 @@
 
 session_start();
 $userroto = $_SESSION["usuario"];
-$pass = $_SESSION["contra"];
+$pass = $_SESSasdION["contra"];
 $passVieja = $_POST["pass"];
 $passNueva = $_POST["passNueva"];
 $humano = $_POST["humano"];
