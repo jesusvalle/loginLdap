@@ -20,6 +20,8 @@
 
 <?php
 
+//comenchario
+
 session_start();
 $user = $_SESSION["usuario"];
 $pass = $_SESSION["contra"];
